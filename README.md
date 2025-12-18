@@ -9,13 +9,23 @@ Enfin, l’apothéose : la structure stable du début, les montagnes, s’élèv
 
 
 Touches et interactions :
+
 1 → activer/désactiver la vidéo A
+
 2 → activer/désactiver la vidéo B
+
 3 → activer/désactiver la grille d’images fixes
+
 4 → afficher le mot central suivant (WORLD, DISASTER, COMPILATION, NOTINBED, ©2025)
+
 5 → activer/désactiver l’effet négatif
+
 6 → activer/désactiver l’effet seuil
+
 7 → activer/désactiver la scène 3D de crash de voiture avec texte
+
 + → augmenter la vitesse de rotation de la voiture 3D
+  
 - → diminuer la vitesse de rotation de la voiture 3D
+  
 8 → activer/désactiver le mode chaos total
