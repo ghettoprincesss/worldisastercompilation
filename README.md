@@ -24,8 +24,8 @@ Touches et interactions :
 
 7 → activer/désactiver la scène 3D de crash de voiture avec texte
 
-+ → augmenter la vitesse de rotation de la voiture 3D
+(+) → augmenter la vitesse de rotation de la voiture 3D
   
-- → diminuer la vitesse de rotation de la voiture 3D
+(-) → diminuer la vitesse de rotation de la voiture 3D
   
 8 → activer/désactiver le mode chaos total
