@@ -102,10 +102,10 @@ function setup(){
   amp.setInput(sound);
 
   // vidéos
-  videoA = createVideo('img/disaster.mp4',()=>{
+  videoA = createVideo('img/disasterglobal.mp4',()=>{
     videoA.loop(); videoA.volume(0); videoA.hide();
   });
-  videoB = createVideo('img/disasterglobal.mp4',()=>{
+  videoB = createVideo('img/disaster.mp4',()=>{
     videoB.loop(); videoB.volume(0); videoB.hide();
   });
 
