@@ -492,8 +492,18 @@ function updateUIEffects(){
 function keyPressed(){
   if(!sound.isPlaying()) sound.loop();
 
-  if(key==='1') effects.videoA=!effects.videoA;
-  if(key==='2') effects.videoB=!effects.videoB;
+  if(key==='1'){
+  effects.videoA = !effects.videoA;
+  if(effects.videoA) videoA.loop(); // force le loop après interaction
+  else videoA.pause();
+}
+
+if(key==='2'){
+  effects.videoB = !effects.videoB;
+  if(effects.videoB) videoB.loop();
+  else videoB.pause();
+}
+
   if(key==='3') effects.images=!effects.images;
 
   if(key==='4'){
