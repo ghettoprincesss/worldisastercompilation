@@ -101,13 +101,14 @@ function setup(){
   amp = new p5.Amplitude();
   amp.setInput(sound);
 
-  // vidéos
-  videoA = createVideo('img/disasterglobal.mp4',()=>{
-    videoA.loop(); videoA.volume(0); videoA.hide();
-  });
-  videoB = createVideo('img/disaster.mp4',()=>{
-    videoB.loop(); videoB.volume(0); videoB.hide();
-  });
+videoA = createVideo('img/disasterglobal.mp4', ()=>{
+  videoA.volume(0);
+  videoA.hide();
+});
+videoB = createVideo('img/disaster.mp4', ()=>{
+  videoB.volume(0);
+  videoB.hide();
+});
 
   // grille images
   cols = floor(width / gridSize);
@@ -493,16 +494,25 @@ function keyPressed(){
   if(!sound.isPlaying()) sound.loop();
 
   if(key==='1'){
-  effects.videoA = !effects.videoA;
-  if(effects.videoA) videoA.loop(); // force le loop après interaction
-  else videoA.pause();
-}
+    effects.videoA = !effects.videoA;
+    if(effects.videoA){
+      // s'assurer que la vidéo est prête avant de loop
+      videoA.onloadedmetadata = () => videoA.loop();
+      videoA.play(); // force le démarrage sur interaction
+    } else {
+      videoA.pause();
+    }
+  }
 
-if(key==='2'){
-  effects.videoB = !effects.videoB;
-  if(effects.videoB) videoB.loop();
-  else videoB.pause();
-}
+  if(key==='2'){
+    effects.videoB = !effects.videoB;
+    if(effects.videoB){
+      videoB.onloadedmetadata = () => videoB.loop();
+      videoB.play();
+    } else {
+      videoB.pause();
+    }
+  }
 
   if(key==='3') effects.images=!effects.images;
 
