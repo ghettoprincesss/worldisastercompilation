@@ -570,3 +570,39 @@ asciiLayer3D.resizeCanvas(width,height);
   cols = floor(width / gridSize);
   rows = floor(height / gridSize);
 }
+// --------------------------------------------------
+// UI CLICK INTERACTIONS (sans toucher au reste)
+// --------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+  const effectMap = {
+    1: () => keyPressedSim('1'),
+    2: () => keyPressedSim('2'),
+    3: () => keyPressedSim('3'),
+    4: () => keyPressedSim('4'),
+    5: () => keyPressedSim('5'),
+    6: () => keyPressedSim('6'),
+    7: () => keyPressedSim('7'),
+    8: () => keyPressedSim('8')
+  };
+
+  document.querySelectorAll('#ui .effect').forEach(effect => {
+    effect.style.cursor = "pointer";
+
+    effect.addEventListener('click', () => {
+      const keyEl = effect.querySelector('.key');
+      if(!keyEl) return;
+
+      const key = parseInt(keyEl.textContent);
+      if(effectMap[key]) effectMap[key]();
+    });
+  });
+});
+
+// --------------------------------------------------
+// SIMULATEUR DE TOUCHE (réutilise ton code tel quel)
+// --------------------------------------------------
+function keyPressedSim(simKey){
+  key = simKey;
+  keyPressed();
+}
